@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+------------Steps to check-------------
+1. Routes define for score boards
+2. we have index action to check score boards and grade result
+3. url to check - http://localhost:3000/score_boards
+4. Specs added to understand what is the expected result 
+5. Validation added for presence of subjects marks and also custom validaion added for invalid grade
+6. Run rake db:seed to create all 50 records in database.
+7. The 'ScoreBoard' service encapsulates the logic for generating student scores and grade reports.
+8. The 'ScoreBoardsController' is responsible for handling requests related to the scoreboards.
