@@ -1,4 +1,13 @@
 class Student < ApplicationRecord
+  validates :subject_1, :subject_2, :subject_3, :subject_4, presence: true
+  validate :check_grade
+
+  def check_grade
+    unless ['A', 'B', 'C'].include?(grade)
+      errors.add(:grade, 'is Invalid')
+    end
+  end
+
   def calculate_grade
     self.total_score = subject_1 + subject_2 + subject_3 + subject_4
     self.grade = calculate_grade_from_score(total_score)

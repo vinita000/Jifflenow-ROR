@@ -1,0 +1,38 @@
+<h1>Score card</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Subject1</th>
+      <th>Subject2</th>
+      <th>Subject3</th>
+      <th>Subject4</th>
+      <th>Grand Total</th>
+      <th>Grade</th>
+      <th>Grade Average Compare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @student_scores.each do |score| %>
+      <tr>
+        <td><%= score[:id] %></td>
+        <td><%= score[:subject1] %></td>
+        <td><%= score[:subject2] %></td>
+        <td><%= score[:subject3] %></td>
+        <td><%= score[:subject4] %></td>
+        <td><%= score[:grand_total] %></td>
+        <td><%= score[:grade] %></td>
+        <td><%= score[:grade_average_compare] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>-------------------------------------------------------</p>
+<h1>Grade Report</h1>
+<p>Number of students in A Grade :: <%= @a_grade_count %></p>
+<p>Number of students in B Grade :: <%= @b_grade_count %></p>
+<p>Number of students in C Grade :: <%= @c_grade_count %></p>
+<p>Number of students above their grade average :: <%= @above_average_count %></p>
+<p>Number of students below their grade average :: <%= @below_average_count %></p>
+<p>-------------------------------------------------------</p>

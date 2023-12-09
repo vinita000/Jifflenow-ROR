@@ -58,6 +58,10 @@ students_data = [
   { subject_1: 68, subject_2: 72, subject_3: 56, subject_4: 81 },
   { subject_1: 85, subject_2: 63, subject_3: 55, subject_4: 54 }
 ]
+
+## Create student data, grade and above_average for each student
 students_data.each do |student_data|
-  Student.find_or_create_by(student_data)
+  student = Student.find_or_create_by(student_data)
+  student.calculate_grade
+  student.above_average
 end
