@@ -61,7 +61,11 @@ students_data = [
 
 ## Create student data, grade and above_average for each student
 students_data.each do |student_data|
-  student = Student.find_or_create_by(student_data)
-  student.calculate_grade
+  student = Student.find_or_initialize_by(student_data)
+  student.total_score = student.subject_1 + student.subject_2 + student.subject_3 + student.subject_4
+  student.save
+end
+
+Student.all.each do |student|
   student.above_average
 end
